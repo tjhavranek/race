@@ -23,15 +23,15 @@ The graphics are charmingly 1980s. But it runs smoothly and it's fun.
 
 ### Desktop (two players, one keyboard)
 
-| Action        | Player 1 (blue)   | Player 2 (orange)    |
-|---------------|-------------------|----------------------|
-| Accelerate    | `W`               | `↑`                  |
-| Brake/Reverse | `S`               | `↓`                  |
-| Steer left    | `A`               | `←`                  |
-| Steer right   | `D`               | `→`                  |
+| Action        | Player 1 (blue)   | Player 2 (orange)                  |
+|---------------|-------------------|------------------------------------|
+| Accelerate    | `W`               | `↑`                                |
+| Brake/Reverse | `S`               | `↓`                                |
+| Steer left    | `A`               | `←`                                |
+| Steer right   | `D`               | `→`                                |
 | Fire          | `E` (after 5 s)   | `Enter` / `Right Ctrl` (after 5 s) |
-| Start/Restart | `Space`           | `Space`              |
-| Menu/Exit     | `Esc`             | `Esc`                |
+| Start/Restart | `Space`           | `Space`                            |
+| Menu/Exit     | `Esc`             | `Esc`                              |
 
 ### Mobile (one human + bot)
 
@@ -39,23 +39,23 @@ On touch devices, Player 2 becomes a bot. Touch the screen to steer, double-tap 
 
 ## How to play
 
-1. Race from **START** to **FINISH** through the streets of Litomyšl.
-2. Pass through all the checkpoints — they are colored to show whose they are.
+1. Wait for the **3-2-1 countdown** and race from **START** to **FINISH** through the streets of Litomyšl.
+2. Pass all **10 checkpoints in order** — they're colored to show whose they are (blue = Player 1, orange = Player 2, purple = both).
 3. You start with **2 lives** — look for the hearts above your car. Red bombs, opponent bullets, Smetana zombies, and crashes each cost you one life.
-4. Watch out for **Smetana zombies** roaming the streets (they look like Bedřich Smetana's portrait, on legs). Touching one costs a life.
-5. Chase the **Litomyšl cows** — look for the white lily on a red shield (the town's coat of arms). Touching a cow grants **5 seconds of immortality** and **permanently upgrades your weapon to rockets**, which one-shot anything they hit.
-6. After 5 seconds of safe start, you can fire — `E` for Player 1, `Enter` or `Right Ctrl` for Player 2.
-7. First across the finish line wins.
+4. Watch out for **Smetana zombies** (they look like Bedřich Smetana's portrait, on legs) — they roam the streets and will chase you if you come within range.
+5. Chase the **Litomyšl cows** — look for the white lily on a red shield (the town's coat of arms). Touching a cow gives you **5 seconds of immortality** and **permanently upgrades your weapon to rockets**, which one-shot anything and damage everything in an 80-pixel blast radius. Catch: a cow pickup briefly slows you for 2 seconds — that's the cost of the upgrade.
+6. After the 5-second safe start, you can fire — `E` for Player 1, `Enter` or `Right Ctrl` for Player 2. Rockets (after a cow) replace bullets and can destroy bombs, zombies, and even buildings.
+7. First across the finish line wins. If you finish in the global top 10, the game asks for your name.
 
 ## Features
 
-- Racing through the streets of Litomyšl, past real landmarks (Litomyšl Castle, Smetanovo náměstí, Gymnázium A. Jiráska, the river Loučná).
-- Formula-1-style cars with checkpoints, projectiles, destructible bombs, Smetana zombies, and magical Litomyšl cows.
-- Two lives per car, shown as hearts above the car.
-- Permanent rocket upgrade after touching a cow.
+- **9 destructible landmarks** of real Litomyšl: the UNESCO Castle (Zámek), Smetana's square (Smetanovo náměstí), the grammar school (Gymnázium A. Jiráska), the elementary school (ZŠ Zámecká), the Smetana House theater (Smetanův dům), the museum (Muzeum), the church (Kostel povýšení sv. Kříže), the Piarist monastery (Piaristický klášter), and a modern house (Domov). They take damage in stages (scorch marks → cracks → fire → rubble) — yes, you can level the town with enough rockets.
+- **Formula-1-style cars** with two lives each, checkpoints, projectiles, bombs, zombies, magical cows, and a 5-second safe-start shield.
+- **Bullets vs rockets**: bullets cost the opponent one life; rockets are area-of-effect and one-shot anything.
+- **Global top-10 leaderboard**, shared in real time across all players worldwide.
 - Local two-player on desktop; one human vs. bot on mobile.
-- Top-10 leaderboard of best lap times.
-- Fullscreen mode and mobile-friendly landscape display.
+- **All audio synthesized in pure Python** — no sample files in the bundle. Engine hum, laser fire, explosions, checkpoint dings, finish-line fanfare, and a looping 140 BPM background composition with melody, bass, and drums.
+- Fullscreen mode and mobile-friendly landscape display, with terrain (mountains, hills, the river Loučná) drawn beneath the track.
 
 ## What's in this repo
 
@@ -63,7 +63,7 @@ On touch devices, Player 2 becomes a bot. Touch the screen to steer, double-tap 
 |---|---|
 | `index.html` | The Pygbag-generated runtime that loads the game in the browser. Hand-customized for mobile fullscreen. |
 | `favicon.png` | Tab icon. |
-| `litomysl-racing-game.apk` | The game itself. Despite the extension, it is a ZIP — Pygbag's bundling convention. Inside: `racing_game.py` (the game), `main.py`, sprite assets, and the build scripts. |
+| `litomysl-racing-game.apk` | The game itself. Despite the extension, it is a ZIP — Pygbag's bundling convention. Inside: `racing_game.py` (~4500 lines), `main.py`, the `smetana.png` portrait sprite, and the build scripts. |
 | `docs/screenshot.png` | The screenshot above. |
 | `.github/workflows/verify.yml` | CI guardrail — verifies the loader and icon haven't been accidentally modified, and (on manual dispatch) verifies the current APK fingerprint. |
 
@@ -76,13 +76,11 @@ ls unpacked/assets/
 
 ## Building from source
 
-The Python source lives inside `litomysl-racing-game.apk`. To rebuild the web bundle yourself after editing, see [CONTRIBUTING.md](CONTRIBUTING.md).
-
-A native desktop build is also possible with PyInstaller — see the `build_windows.bat` script inside the bundle.
+The Python source lives inside `litomysl-racing-game.apk`. To rebuild the web bundle yourself after editing, see [CONTRIBUTING.md](CONTRIBUTING.md). A native desktop build is also possible with PyInstaller — see the `build_windows.bat` script inside the bundle.
 
 ## About Litomyšl
 
-[Litomyšl](https://en.wikipedia.org/wiki/Litomy%C5%A1l) is a small town in eastern Bohemia, in the Czech Republic. Its castle is a UNESCO World Heritage Site, the composer Bedřich Smetana was born there, and the central square (Smetanovo náměstí) is one of the prettiest in the country.
+[Litomyšl](https://en.wikipedia.org/wiki/Litomy%C5%A1l) is a small town in eastern Bohemia, Czech Republic. Its Renaissance castle is a UNESCO World Heritage Site, the composer Bedřich Smetana was born there, and Smetanovo náměstí is one of the prettiest squares in the country.
 
 ## Takeaway
 
