@@ -49,7 +49,7 @@ jobs:
             echo "ok: ${file}"
           }
 
-          check_hash "index.html"  "ee7b04856cea63600de6f6295381ddbe15948adb337b98c44f19bd1cda78639c"
+          check_hash "index.html"  "3c181ef0bc6bd66f11d5d4535412db05a92be1105bef1987eb0c29e25c1d11bc"
           check_hash "favicon.png" "c7dd328962fe52940a5301a1eb8293f67acaa8d16117313ea864b341be346f05"
 
           if [[ "${{ github.event_name }}" == "workflow_dispatch" && "${{ inputs.verify_apk }}" == "true" ]]; then
