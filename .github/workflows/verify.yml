@@ -1,0 +1,62 @@
+name: verify
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "litomysl-racing-game.apk"
+  pull_request:
+    branches: [main]
+    paths-ignore:
+      - "litomysl-racing-game.apk"
+  workflow_dispatch:
+    inputs:
+      verify_apk:
+        description: "Also enforce the current APK SHA-256 fingerprint"
+        required: true
+        default: 'false'
+        type: choice
+        options: ['true', 'false']
+
+permissions:
+  contents: read
+
+jobs:
+  protected-files:
+    name: Loader / icon must be byte-identical
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify protected files
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          check_hash() {
+            local file="$1"
+            local expected="$2"
+            if [[ ! -f "$file" ]]; then
+              echo "::error file=${file}::Missing protected file"
+              return 1
+            fi
+            local actual
+            actual="$(sha256sum "$file" | awk '{print $1}')"
+            if [[ "$actual" != "$expected" ]]; then
+              echo "::error file=${file}::SHA-256 mismatch: expected ${expected}, got ${actual}"
+              return 1
+            fi
+            echo "ok: ${file}"
+          }
+
+          check_hash "index.html"  "ee7b04856cea63600de6f6295381ddbe15948adb337b98c44f19bd1cda78639c"
+          check_hash "favicon.png" "c7dd328962fe52940a5301a1eb8293f67acaa8d16117313ea864b341be346f05"
+
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" && "${{ inputs.verify_apk }}" == "true" ]]; then
+            check_hash "litomysl-racing-game.apk" "531bf5c3898d3831bb08a2d17c88465202da8a4dad5f4cb014b97e5a71111879"
+          elif [[ ! -f "litomysl-racing-game.apk" ]]; then
+            echo "::error file=litomysl-racing-game.apk::Missing APK"
+            exit 1
+          else
+            echo "info: APK present ($(sha256sum litomysl-racing-game.apk | awk '{print $1}')); fingerprint check skipped (only runs on workflow_dispatch with verify_apk=true)"
+          fi
