@@ -29,7 +29,7 @@ The graphics are charmingly 1980s. But it runs smoothly and it's fun.
 | Brake/Reverse | `S`               | `↓`                  |
 | Steer left    | `A`               | `←`                  |
 | Steer right   | `D`               | `→`                  |
-| Fire          | `E` (after 5 s)   | `Enter` (after 5 s)  |
+| Fire          | `E` (after 5 s)   | `Enter` / `Right Ctrl` (after 5 s) |
 | Start/Restart | `Space`           | `Space`              |
 | Menu/Exit     | `Esc`             | `Esc`                |
 
@@ -39,19 +39,23 @@ On touch devices, Player 2 becomes a bot. Touch the screen to steer, double-tap 
 
 ## How to play
 
-1. Race from **START** to **FINISH**.
+1. Race from **START** to **FINISH** through the streets of Litomyšl.
 2. Pass through all the checkpoints — they are colored to show whose they are.
-3. Avoid the red bombs. They will destroy your car.
-4. After 5 seconds you can fire — to blow up bombs, or the other player.
-5. First across the finish line wins.
+3. You start with **2 lives** — look for the hearts above your car. Red bombs, opponent bullets, Smetana zombies, and crashes each cost you one life.
+4. Watch out for **Smetana zombies** roaming the streets (they look like Bedřich Smetana's portrait, on legs). Touching one costs a life.
+5. Chase the **Litomyšl cows** — look for the white lily on a red shield (the town's coat of arms). Touching a cow grants **5 seconds of immortality** and **permanently upgrades your weapon to rockets**, which one-shot anything they hit.
+6. After 5 seconds of safe start, you can fire — `E` for Player 1, `Enter` or `Right Ctrl` for Player 2.
+7. First across the finish line wins.
 
 ## Features
 
 - Racing through the streets of Litomyšl, past real landmarks (Litomyšl Castle, Smetanovo náměstí, Gymnázium A. Jiráska, the river Loučná).
-- Formula-1-style cars with checkpoints, projectiles, and destructible bombs.
+- Formula-1-style cars with checkpoints, projectiles, destructible bombs, Smetana zombies, and magical Litomyšl cows.
+- Two lives per car, shown as hearts above the car.
+- Permanent rocket upgrade after touching a cow.
 - Local two-player on desktop; one human vs. bot on mobile.
-- Best-time tracking (min / avg / max).
-- Music toggle, fullscreen mode, mobile-friendly landscape display.
+- Top-10 leaderboard of best lap times.
+- Fullscreen mode and mobile-friendly landscape display.
 
 ## What's in this repo
 
