@@ -5,13 +5,13 @@
 [![Built with Pygbag](https://img.shields.io/badge/built%20with-Pygbag-blue.svg)](https://github.com/pygame-web/pygbag)
 [![Made with Claude Code](https://img.shields.io/badge/made%20with-Claude%20Code-8A4FFF.svg)](https://docs.anthropic.com/en/docs/claude-code)
 
-A two-player browser racing game set in Litomyšl, Czech Republic. Built by three kids (ages 8–12) using [Claude Code](https://docs.anthropic.com/en/docs/claude-code) in about two hours — and then many more hours testing and improving it.
+A two-player browser racing game set in Litomyšl, Czech Republic. Built by **Dan, Fila, and Lucinka** (ages 8–12) using [Claude Code](https://docs.anthropic.com/en/docs/claude-code) in about two hours — and then many more hours testing and improving it. Originally a gift for Kryštof and Kačka.
 
 ## ▶ [Play now in your browser](https://tjhavranek.github.io/race/)
 
 No install needed. Works on desktop and on mobile (tap the fullscreen button when prompted).
 
-![Litomyšl Street Racing screenshot](docs/screenshot.png)
+![A top-down view of Litomyšl rendered in 1980s-style pixel art: nine landmark buildings labeled in Czech (Zámek Litomyšl, Smetanovo náměstí, Gymnázium A. Jiráska, ZŠ Zámecká, Smetanův dům, Muzeum, Kostel povýšení sv. Kříže, Piaristický klášter, Domov), a winding road network with 10 glowing checkpoint rings and scattered red bombs, the river Loučná running through, a blue Player 1 car near START and an orange Player 2 car near FINISH with an active "P2 IMMORTAL: 0.5s" cow power-up. A cow with the Litomyšl lily emblem stands near the museum; Smetana-portrait zombies are scattered across the streets.](docs/screenshot.png)
 
 ## The story
 
@@ -49,13 +49,11 @@ On touch devices, Player 2 becomes a bot. Touch the screen to steer, double-tap 
 
 ## Features
 
-- **9 destructible landmarks** of real Litomyšl: the UNESCO Castle (Zámek), Smetana's square (Smetanovo náměstí), the grammar school (Gymnázium A. Jiráska), the elementary school (ZŠ Zámecká), the Smetana House theater (Smetanův dům), the museum (Muzeum), the church (Kostel povýšení sv. Kříže), the Piarist monastery (Piaristický klášter), and a modern house (Domov). They take damage in stages (scorch marks → cracks → fire → rubble) — yes, you can level the town with enough rockets.
-- **Formula-1-style cars** with two lives each, checkpoints, projectiles, bombs, zombies, magical cows, and a 5-second safe-start shield.
-- **Bullets vs rockets**: bullets cost the opponent one life; rockets are area-of-effect and one-shot anything.
-- **Global top-10 leaderboard**, shared in real time across all players worldwide.
-- Local two-player on desktop; one human vs. bot on mobile.
-- **All audio synthesized in pure Python** — no sample files in the bundle. Engine hum, laser fire, explosions, checkpoint dings, finish-line fanfare, and a looping 140 BPM background composition with melody, bass, and drums.
-- Fullscreen mode and mobile-friendly landscape display, with terrain (mountains, hills, the river Loučná) drawn beneath the track.
+- **9 destructible Litomyšl landmarks** — Zámek (Castle, UNESCO), Smetanovo náměstí, Gymnázium A. Jiráska, ZŠ Zámecká, Smetanův dům, Muzeum, Kostel povýšení sv. Kříže, Piaristický klášter, and Domov. They take damage in stages (scorch → cracks → fire → rubble). Yes, you can level the town.
+- **Bullets vs rockets** — bullets cost the opponent one life; rockets (after a cow) are area-of-effect and one-shot anything.
+- **Global top-10 leaderboard** shared in real time across all players worldwide.
+- **All audio synthesized in pure Python** — engine, fire, explosions, dings, finish fanfare, and a looping 140 BPM track with melody, bass, and drums. No sample files in the bundle.
+- Terrain (mountains, hills, the river Loučná) drawn beneath the track; fullscreen + mobile-landscape friendly.
 
 ## What's in this repo
 
@@ -77,6 +75,12 @@ ls unpacked/assets/
 ## Building from source
 
 The Python source lives inside `litomysl-racing-game.apk`. To rebuild the web bundle yourself after editing, see [CONTRIBUTING.md](CONTRIBUTING.md). A native desktop build is also possible with PyInstaller — see the `build_windows.bat` script inside the bundle.
+
+## Notes
+
+- **Audio needs a user gesture.** Modern browsers won't start music or sound effects until you click or press a key on the page (Web Audio policy). The very first menu interaction unlocks audio.
+- **The leaderboard is a shared public store.** Times are persisted to a free public JSON endpoint (npoint.io). It's lightweight and there's no auth — which means a clever visitor could in principle clear or spam it. So far that has not happened.
+- **Mobile fullscreen + landscape** are requested by the page; depending on the browser/OS, you may need to confirm a "fullscreen?" prompt before orientation locks.
 
 ## About Litomyšl
 
