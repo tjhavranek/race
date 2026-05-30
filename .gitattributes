@@ -1,8 +1,11 @@
-# Byte-identity contract: never normalize the three deployed files.
-# (index.html is "text" but its bytes are part of the published artifact;
-#  treating it as binary prevents Windows autocrlf from rewriting LF -> CRLF
-#  in working trees and matching the deployed file's hash everywhere.)
-index.html               -text
+# Byte-identity contract: the three deployed files must keep their exact bytes.
+# index.html is LF text and is part of the published artifact, so force LF: git
+# normalizes any CRLF away on commit, so a careless `git add` on Windows can
+# never introduce CRLF and break the hash GitHub Pages serves. (An earlier
+# `-text` rule stored the working copy verbatim, which let a stale CRLF working
+# tree be committed as CRLF — the footgun this replaces.) The apk and favicon
+# are genuinely binary.
+index.html               text eol=lf
 favicon.png              binary
 litomysl-racing-game.apk binary
 
