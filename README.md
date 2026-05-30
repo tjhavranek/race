@@ -11,6 +11,8 @@ A two-player browser racing game set in Litomyšl, Czech Republic. Built by **Da
 
 No install needed. Works on desktop and on mobile (tap the fullscreen button when prompted).
 
+> **Play with a friend or against the computer.** Whatever you touch *first* picks the mode: press a key and it's a two-player game on one keyboard; use the **mouse alone** (without touching the keyboard) and Player 2 becomes a computer bot you race against. On mobile it's always you vs. the bot.
+
 ![A top-down view of Litomyšl rendered in 1980s-style pixel art: nine landmark buildings labeled in Czech (Zámek Litomyšl, Smetanovo náměstí, Gymnázium A. Jiráska, ZŠ Zámecká, Smetanův dům, Muzeum, Kostel povýšení sv. Kříže, Piaristický klášter, Domov), a winding road network with 10 glowing checkpoint rings and scattered red bombs, the river Loučná running through, a blue Player 1 car near START and an orange Player 2 car near FINISH with an active "P2 IMMORTAL: 0.5s" cow power-up. A cow with the Litomyšl lily emblem stands near the museum; Smetana-portrait zombies are scattered across the streets.](docs/screenshot.png)
 
 ## The story
@@ -21,7 +23,9 @@ The graphics are charmingly 1980s. But it runs smoothly and it's fun.
 
 ## Controls
 
-### Desktop (two players, one keyboard)
+**Your first input picks the mode.** Press a key → two players share one keyboard. Use the mouse first (or touch, on mobile) without pressing a key → you drive Player 1 and the computer takes Player 2. Touching the keyboard at any point switches the session to two players.
+
+### Two players — keyboard
 
 | Action        | Player 1 (blue)   | Player 2 (orange)                  |
 |---------------|-------------------|------------------------------------|
@@ -33,9 +37,9 @@ The graphics are charmingly 1980s. But it runs smoothly and it's fun.
 | Start/Restart | `Space`           | `Space`                            |
 | Menu/Exit     | `Esc`             | `Esc`                              |
 
-### Mobile (one human + bot)
+### One player vs. the bot — mouse or touch
 
-On touch devices, Player 2 becomes a bot. Touch the screen to steer, double-tap to fire.
+Works the same on desktop (mouse) and mobile (touch): hold to accelerate and steer toward the pointer, double-click / double-tap to fire. Player 2 drives itself. Don't touch the keyboard, or the game flips back to two players.
 
 ## How to play
 
