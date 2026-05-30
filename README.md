@@ -5,7 +5,7 @@
 [![Built with Pygbag](https://img.shields.io/badge/built%20with-Pygbag-blue.svg)](https://github.com/pygame-web/pygbag)
 [![Made with Claude Code](https://img.shields.io/badge/made%20with-Claude%20Code-8A4FFF.svg)](https://docs.anthropic.com/en/docs/claude-code)
 
-A two-player browser racing game set in Litomyšl, Czech Republic. Built by **Dan, Fila, and Lucinka** (ages 8–12) using [Claude Code](https://docs.anthropic.com/en/docs/claude-code) in about two hours — and then many more hours testing and improving it. Originally a gift for their cousins Kryštof and Kačka.
+A two-player browser racing game set in Litomyšl, Czech Republic. Built by **Dan, Fila, and Lucinka** (ages 8–12) using [Claude Code](https://docs.anthropic.com/en/docs/claude-code) in about two hours, and then many more hours testing and improving it. Originally a gift for their cousins Kryštof and Kačka.
 
 ## ▶ [Play now in your browser](https://tjhavranek.github.io/race/)
 
@@ -96,4 +96,4 @@ If kids can build a working game in two hours, you might be surprised what you c
 
 ## License
 
-[MIT](LICENSE) — built by Dan, Fíla a Lucinka. Have fun.
+[MIT](LICENSE) — built by Dan, Fíla, and Lucinka. Have fun.
