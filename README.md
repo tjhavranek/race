@@ -5,7 +5,7 @@
 [![Built with Pygbag](https://img.shields.io/badge/built%20with-Pygbag-blue.svg)](https://github.com/pygame-web/pygbag)
 [![Made with Claude Code](https://img.shields.io/badge/made%20with-Claude%20Code-8A4FFF.svg)](https://docs.anthropic.com/en/docs/claude-code)
 
-A two-player browser racing game set in Litomyšl, Czech Republic. Built by **Dan, Fila, and Lucinka** (ages 8–12) using [Claude Code](https://docs.anthropic.com/en/docs/claude-code) in about two hours — and then many more hours testing and improving it. Originally a gift for Kryštof and Kačka.
+A two-player browser racing game set in Litomyšl, Czech Republic. Built by **Dan, Fila, and Lucinka** (ages 8–12) using [Claude Code](https://docs.anthropic.com/en/docs/claude-code) in about two hours — and then many more hours testing and improving it. Originally a gift for their cousins Kryštof and Kačka.
 
 ## ▶ [Play now in your browser](https://tjhavranek.github.io/race/)
 
@@ -15,7 +15,7 @@ No install needed. Works on desktop and on mobile (tap the fullscreen button whe
 
 ## The story
 
-Our kids were sick and bored at home, so we introduced them to Claude Code. They did almost everything themselves — designing the track, setting the rules, picking the features. We only helped with publishing it on GitHub.
+Our kids were sick and bored at home in February, so we introduced them to Claude Code. They did almost everything themselves — designing the track, setting the rules, picking the features. We only helped with publishing it on GitHub.
 
 The graphics are charmingly 1980s. But it runs smoothly and it's fun.
 
@@ -84,12 +84,12 @@ The Python source lives inside `litomysl-racing-game.apk`. To rebuild the web bu
 
 ## About Litomyšl
 
-[Litomyšl](https://en.wikipedia.org/wiki/Litomy%C5%A1l) is a small town in eastern Bohemia, Czech Republic. Its Renaissance castle is a UNESCO World Heritage Site, the composer Bedřich Smetana was born there, and Smetanovo náměstí is one of the prettiest squares in the country.
+[Litomyšl](https://en.wikipedia.org/wiki/Litomy%C5%A1l) is a small historical town in eastern Bohemia, Czech Republic. Its Renaissance castle is a UNESCO World Heritage Site, the composer Bedřich Smetana was born there, and Smetanovo náměstí is one of the prettiest squares in the country.
 
 ## Takeaway
 
-If our kids can build a working game in two hours, you might be surprised what you can do.
+If kids can build a working game in two hours, you might be surprised what you can do.
 
 ## License
 
-[MIT](LICENSE) — built by Tomáš Havránek and contributors. Have fun.
+[MIT](LICENSE) — built by Dan, Fíla a Lucinka. Have fun.
